@@ -34,8 +34,8 @@ class_names = train_ds.classes
 num_classes = len(class_names)
 print("คลาส:", class_names)
 
-train_loader = DataLoader(train_ds, batch_size=BATCH, shuffle=True, num_workers=NUM_WORKERS)
-val_loader   = DataLoader(val_ds,   batch_size=BATCH, shuffle=False, num_workers=NUM_WORKERS)
+train_loader = DataLoader(train_ds, batch_size=BATCH, shuffle=True, num_workers=NUM_WORKERS,pin_memory=True)
+val_loader   = DataLoader(val_ds,   batch_size=BATCH, shuffle=False, num_workers=NUM_WORKERS,pin_memory=True)
 
 # โมเดลจาก timm
 model = timm.create_model("efficientnet_b0", pretrained=True, num_classes=num_classes)
@@ -62,6 +62,7 @@ def evaluate():
     return correct/total, loss_sum/total
 
 if __name__ == "__main__":
+    print('device:', device)
     for epoch in range(1, EPOCHS+1):
         model.train()
         for x, y in train_loader:

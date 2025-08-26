@@ -7,3 +7,7 @@ pandas
 matplotlib
 tqdm
 jupyter
+uvicorn
+timm
+pillow
+fastapi[standard]
