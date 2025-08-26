@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Ignore dataset files
+dataset/train/*/*
+dataset/val/*/*
+# แต่ให้เก็บ .gitkeep
+!dataset/train/*/.gitkeep
+!dataset/val/*/.gitkeep
+
+# Model files
+*.pt
+*.h5
+*.ckpt
+
+# Images (ถ้าเป็นแค่ตัวอย่างเล็กๆ ไม่ต้อง ignore)
+*.jpg
+*.png
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
